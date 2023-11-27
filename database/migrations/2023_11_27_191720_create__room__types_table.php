@@ -17,11 +17,9 @@ return new class extends Migration
             $table->text('image')->nullable();
             $table->unsignedBigInteger("hotel_id");
             $table->unsignedBigInteger("city_id");
-
-            $table->timestamps();
-
             $table->foreign('hotel_id')->references('id')->on('Hotels');
             $table->foreign('city_id')->references('id')->on('Cities');
+            $table->timestamps();
 
         });
     }
